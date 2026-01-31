@@ -25,6 +25,7 @@
         <meta property="og:site_name" content="Radio Fajar FM  Banyuwangi"/>
         <meta name="google-site-verification" content="C-y3Rm4dkzaiScMSfPMQI4bU35i-t-N6VwHibjLzr6U" />
         <link rel="canonical" href="https://fajarfm.mbahnunungonline.net/" />
+	    <link rel="manifest" href="/manifest.json">
 <style>
 body {
   margin: 0;
@@ -93,5 +94,17 @@ $.kast({
     
   </tr>
 </table>
+	<script>
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/service-worker.js')
+              .then(function(registration) {
+                console.log('Service Worker registrado com sucesso:', registration);
+              }, function(err) {
+                console.log('Falha ao registrar o Service Worker:', err);
+              });
+          });
+        }
+      </script>	
 </body>
 </html>
